@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div style="width: 70%; margin:auto">
+<form class="form-inline" method="post" action="/add">
+    <div class="form-row">
+    <input type="text" placeholder="Nazwa produktu" , name="name">
+    <input type="text" placeholder="Cena" , name="price">
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="productCategory">
+        <option selected>Kategoria produktu</option>
+        <option value="ART_SPOŻYWCZE">ART_SPOŻYWCZE</option>
+        <option value="ART_GOSP_DOMOWEGO">ART_GOSP_DOMOWEGO</option>
+        <option value="INNE">INNE</option>
+    </select>
+    <input type="submit" name="Zapisz">
+    </div>
+</form>
+</div>
+</body>
+</html>
