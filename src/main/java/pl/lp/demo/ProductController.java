@@ -39,13 +39,18 @@ public class ProductController {
     @ResponseBody
     public String filter(@RequestParam ProductCategory productCategory) {
         String products = "";
+        double totalPrice = 0;
         String productCat = String.valueOf(productCategory);
         LinkedList list = productsList.getProducts();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).toString().contains(productCat)) {
                 products += list.get(i).toString() + "<br/>";
+                totalPrice += productsList.getPrice(i);
             }
+
         }
+        products += "Total price: " + totalPrice + "<br/>";
         return products;
     }
-}//localhost:8080/lista?productCategory=ART_SPOŻYWCZE
+}
+//localhost:8080/lista?productCategory=ART_SPOŻYWCZE
