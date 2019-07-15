@@ -27,11 +27,10 @@ public class ProductController {
     }
 
     @RequestMapping("/add")
-    //   @ResponseBody
     public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam ProductCategory productCategory) {
+  //public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam(defaultValue ="INNE") ProductCategory productCategory) {
         Product product = new Product(name, price, productCategory);
         productsList.addProduct(product);
-        //return "Dodano produkt: " + name + " " + price + " " + productCategory;
         return "redirect:/products";
     }
 
