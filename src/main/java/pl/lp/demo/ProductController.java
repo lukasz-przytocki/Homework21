@@ -19,10 +19,13 @@ public class ProductController {
     @RequestMapping("/products")
     public String getAllProducts() {
         String products = "";
+        double totalPrice = 0;
         LinkedList list = productsList.getProducts();
         for (int i = 0; i < list.size(); i++) {
             products += list.get(i).toString() + "<br/>";
+            totalPrice += productsList.getPrice(i);
         }
+        products += "Total price: " + totalPrice + "<br/>";
         return products;
     }
 
