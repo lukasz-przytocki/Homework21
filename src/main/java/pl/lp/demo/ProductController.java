@@ -30,8 +30,8 @@ public class ProductController {
     }
 
     @RequestMapping("/add")
-    public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam ProductCategory productCategory) {
-  //public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam(defaultValue ="INNE") ProductCategory productCategory) {
+    //public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam ProductCategory productCategory) {
+   public String addProduct(@RequestParam String name, @RequestParam Double price, @RequestParam(defaultValue ="INNE", required = false) ProductCategory productCategory) {
         Product product = new Product(name, price, productCategory);
         productsList.addProduct(product);
         return "redirect:/products";
