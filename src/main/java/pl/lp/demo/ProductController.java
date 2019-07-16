@@ -52,4 +52,3 @@ public class ProductController {
         return products;
     }
 }
-//localhost:8080/lista?productCategory=ART_SPOŻYWCZE
